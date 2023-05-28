@@ -24,3 +24,5 @@ cria plano de ação para as mudanças que serão aplicadas no ambiente:
 destruir recursos:
 	terraform destroy
 
+
+**
