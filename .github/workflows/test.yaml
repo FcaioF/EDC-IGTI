@@ -1,12 +1,12 @@
-name: Deploy
+name: Test on PR
 
 on:
-  push:
+  pull_request:
     branches: [main]
 
 jobs:
-  deploy:
-    name: Deploy to Datalake
+  test:
+    name: Test infra on PR
     runs-on: ubuntu-latest
 
     steps:
@@ -33,5 +33,4 @@ jobs:
         cd terraform
         #COMMAND_IAC init
         COMMAND_IAC validate
-        COMMAND_IAC plan
-        COMMAND_IAC apply -auto-approve   
+        COMMAND_IAC plan   
