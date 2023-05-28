@@ -1,0 +1,26 @@
+instalando terraform via terminal:
+1 - wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+
+2 - echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+
+3 - sudo apt update && sudo apt install terraform
+*******************************************************
+Comandos terraform
+
+
+inicia o terraform:
+	terraform init
+
+formata o codigo de acordo com padrão:
+
+	terraform fmt
+
+valida o codigo: 
+	terraform validade
+
+cria plano de ação para as mudanças que serão aplicadas no ambiente:
+	terraform plan
+
+destruir recursos:
+	terraform destroy
+
