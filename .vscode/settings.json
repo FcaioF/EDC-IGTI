@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": "file:///mnt/48447c52-52ac-4abb-be1b-d26a64732ee0/Documents/git_repositores/IGTI_EDC/.github/workflows/deploy.yaml"
+    }
+}
