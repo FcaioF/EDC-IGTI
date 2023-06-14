@@ -1,0 +1,10 @@
+*.csv
+*.pdf
+*.parquet
+*.parquet.*
+*.crc
+*.zip
+*.tsv
+*.7z
+*_SUCCESS
+*part*
