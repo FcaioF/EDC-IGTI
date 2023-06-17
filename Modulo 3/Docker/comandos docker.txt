@@ -1,0 +1,55 @@
+comandos basicos docker 
+
+
+** pesquisar imagens por nome 
+docker search [nome da imagem]
+
+**listar as imagems que estão baixadas localmente
+docker images 
+      ou
+docker images ls
+
+**listar os container criados
+docker container
+      ou 
+docker container ls
+      ou 
+
+docker ps
+
+
+**listar todos os container (inclusive deletados)
+docker ps -a
+
+**parar um container 
+docker stop [chave do container]
+
+**deletar um container 
+docker rm [chave ou nome do container]
+
+** como deletar imagens 
+
+docker images rm [id da imagem]
+
+**fazer o download de uma imagem
+docker pull [nome da imagem]
+
+
+** criar um container apartir de uma imagem
+docker run [nome da imagem]
+
+**criar um container que execute em segundo plano
+docker run -d [nome da imagem]
+
+**publicar um container em uma porta para realizar acesso (porta precisa ser configurada de acordo com a aplicação.)
+
+docker run -d -p 8080:80 nginx
+
+** como fazer acesso ao container docker
+docker exec -it [chave do container ou nome] bash
+
+
+
+** comando usado para subir um container nginx e compartilhando uma pasta local com o container
+udo docker run  -d -v/home/caio-server/Desktop/myHtml:/usr/share/nginx/html:ro -p 8080:80 nginx
+
