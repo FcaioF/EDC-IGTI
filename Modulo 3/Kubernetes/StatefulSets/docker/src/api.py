@@ -1,10 +1,20 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
+from rediscluster import Redisluster
+
+import os
+
+db_host = os.getenv('REDIS_HOST','redis')
+db_port = os.getenv('REDIS_PORT','6379')
 
 app = FastAPI()
+
+redis = Redis(host=db_host, port=db_port, decode_response=True)
 @app.get('/',response_class=HTMLResponse)
 async def root():
-    return """
+    redis.incr("count")
+    count = str(redis.get("count"),"utf-8")
+    return f"""
     <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +22,8 @@ async def root():
 </head>
 <body>
   <h1>Sonhos de consumo</h1>
+
+  <h1>quantidade de visitas ao site: {count}</h1>
   
   <h2>Yamaha Tracer 900GT </h2>
   <img src="https://www.zabikers.co.za/wp-content/uploads/2019/11/Tracer-Cover.jpg" alt="Imagem 1">
@@ -24,7 +36,6 @@ async def root():
 </body>
 </html>    
     """
-
 @app.get('/healthz')
 async def health():
     return {

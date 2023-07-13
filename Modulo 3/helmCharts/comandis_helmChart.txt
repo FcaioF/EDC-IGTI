@@ -1,0 +1,24 @@
+****Comandos Helm chart
+
+**Criar um chart padrão 
+helm create mychart
+
+**como instalar um chart
+helm install myrelease ./mychart/
+
+**como checar lista dos charts existentes
+helm list
+
+**como checar lista do repositorios configurados no helm
+helm repo list
+
+**checar status de helm  especifico
+helm status myrelease
+
+**desinstalando um chart que esta provisionado
+helm uninstall myrelease
+
+
+
+ 
+

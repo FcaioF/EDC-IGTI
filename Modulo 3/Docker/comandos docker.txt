@@ -1,7 +1,16 @@
 comandos basicos docker 
 
 
-** pesquisar imagens por nome 
+**Como criar uma nova imagem a partir de um dockerfile
+docker build -t fcaiof/myapi:3.0.0 .
+
+**como fazer upload de uma imagem local para o repositorio do docker 
+docker push fcaiof/myapi:3.0.0
+
+
+
+
+** pesquisar imagens por nome
 docker search [nome da imagem]
 
 **listar as imagems que estão baixadas localmente
